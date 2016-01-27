@@ -11,3 +11,7 @@ def gallery(request, object_id=None):
     }
     return render(request, template, context)
 
+
+def gallery_update(request, object_id=None):
+    pass
+
