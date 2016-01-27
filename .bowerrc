@@ -1,0 +1,6 @@
+{
+   "directory": "src/static/lib/",
+   "scripts": {
+       "postinstall": "bower install"
+    }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "es-gallery",
+  "homepage": "https://github.com/EthanK28/es-gallery",
+  "authors": [
+    "EthanK28 <kes0228@gmail.com>"
+  ],
+  "description": "django 간단한 갤러리",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.2.0",
+    "bootstrap": "^3.3.6"
+  }
+}

@@ -1,2 +1,5 @@
 */**/__pycache__
 es_gallery/db.sqlite3
+src/.idea
+/src/static/lib
+.idea
