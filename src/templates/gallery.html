@@ -8,18 +8,16 @@
         <div class="col-md-4">
             <p>
                 <img class="img-responsive" src="{% static "img/1.jpg" %}" alt="">
-
-
-                <button class="btn btn-primary">좋아요</button>
+                <button value="1" class="btn btn-primary like">좋아요</button>
             </p>
         </div>
         <div class="col-md-4">
             <img class="img-responsive" src="{% static "img/2.jpg" %}" alt="">
-            <button class="btn btn-primary">좋아요</button>
+            <button value="2" class="btn btn-primary like">좋아요</button>
         </div>
         <div class="col-md-4">
             <img class="img-responsive" src="{% static "img/3.jpg" %}" alt="">
-            <button class="btn btn-primary">좋아요</button>
+            <button value="3" class="btn btn-primary like">좋아요</button>
         </div>
     </div>
 
@@ -30,10 +28,24 @@
 
 <img src="" alt="">
 
+{% endblock content %}
+
+{% block js %}
+
 <script>
     $(function(){
+        $('.like').on('click', function() {
+            $.ajax({
+            url: "",
+            type: 'POST',
+            data: {
+              format: 'json'
+            },
+            success: function(result){
+
+            }});
+        });
 
     });
 </script>
-
-{% endblock content %}
+{% endblock js %}
