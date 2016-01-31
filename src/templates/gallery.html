@@ -3,49 +3,28 @@
 
 {% block content %}
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-4">
-            <p>
-                <img class="img-responsive" src="{% static "img/1.jpg" %}" alt="">
-                <button value="1" class="btn btn-primary like">좋아요</button>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <img class="img-responsive" src="{% static "img/2.jpg" %}" alt="">
-            <button value="2" class="btn btn-primary like">좋아요</button>
-        </div>
-        <div class="col-md-4">
-            <img class="img-responsive" src="{% static "img/3.jpg" %}" alt="">
-            <button value="3" class="btn btn-primary like">좋아요</button>
-        </div>
+<h1>이미지들 안녕?</h1>
+{% csrf_token %}
+{% for image in queryset %}
+
+
+
+
+    <div>
+        <img style="width:200px;" src="{{ MEDIA_URL }}{{ image.image}}" alt="">
+        <button value="{{ image.id}}" class="btn btn-primary like">좋아요</button>
+        <span class="likes">{{ image.likes }}</span>
     </div>
 
-</div>
 
+{% endfor %}
 
-
-
-<img src="" alt="">
 
 {% endblock content %}
 
 {% block js %}
 
-<script>
-    $(function(){
-        $('.like').on('click', function() {
-            $.ajax({
-            url: "",
-            type: 'POST',
-            data: {
-              format: 'json'
-            },
-            success: function(result){
-
-            }});
-        });
-
-    });
-</script>
+    <script src="{% static 'js/gallery.js' %}"></script>
 {% endblock js %}
+
+
