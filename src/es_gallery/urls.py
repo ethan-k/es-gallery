@@ -14,11 +14,15 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from gallery.views import gallery
+from gallery.views import gallery, list_view, image_like_update
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^gallery/$', gallery,  name='gallery'),
+    url(r'^list/$', list_view,  name='list'),
+    url(r'^update/$', image_like_update, name='like_update')
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

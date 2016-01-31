@@ -4,6 +4,7 @@ from django.contrib import admin
 from .models import Gallery
 
 class GalleryAdmin(admin.ModelAdmin):
-    fields = ('image', 'likes')
+    fields = ('title', 'image', 'likes')
+    list_display = ('title', 'likes')
 
 admin.site.register(Gallery, GalleryAdmin)
